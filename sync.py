@@ -5,8 +5,6 @@ import json
 import os
 import sys
 
-username = 'Andy'
-
 if len(sys.argv) != 2:
 	sys.exit("Usage: ./sync.py [your github username]")
 
