@@ -3,10 +3,14 @@
 import requests
 import json
 import os
+import sys
 
 username = 'Andy'
 
-request = requests.get('https://api.github.com/users/andyhmltn/repos')
+if len(sys.argv) != 2:
+	sys.exit("Usage: ./sync.py [your github username]")
+
+request = requests.get('https://api.github.com/users/'+str(sys.argv[1])+'/repos')
 
 if(request.ok):
 	repos = json.loads(request.text or request.content)
