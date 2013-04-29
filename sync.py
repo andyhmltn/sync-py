@@ -21,4 +21,5 @@ if(request.ok):
 		print "Cloning repo: " + str(repo['full_name'])
 		os.system("git clone " + repo_url)
 else:
-	print request
+	print "There was an error with your request"
+	print "Error code:"+ str(request.status_code)
